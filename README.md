@@ -9,7 +9,6 @@ The goal is to run some postgres testing against geo payloads to verify the spee
 Frameworks tested:
 
 - Bare Node
-- Connect
 - Express
   - Express using Router & Prefix
 - Fastify
