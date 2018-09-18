@@ -18,6 +18,7 @@ async function start () {
       state: { parse: false }
     },
     handler: function (request, h) {
+
       return { hello: 'world' }
     }
   })

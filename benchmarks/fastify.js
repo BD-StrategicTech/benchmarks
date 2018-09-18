@@ -1,6 +1,7 @@
 'use strict'
 
 const fastify = require('fastify')()
+const db = require('../lib/db')
 
 const schema = {
   schema: {
@@ -18,7 +19,10 @@ const schema = {
 }
 
 fastify.get('/', schema, function (req, reply) {
-  reply.send({ hello: 'world' })
+  db.any('SELECT something FROM table WHERE thing')
+    .then(data => reply.send(data))
+    .catch(err => console.error(err))
+  // reply.send({ hello: 'world' })
 })
 
 fastify.listen(3000)
